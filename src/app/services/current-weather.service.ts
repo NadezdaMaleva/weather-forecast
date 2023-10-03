@@ -92,13 +92,11 @@ export class CurrentWeatherService {
     return forkJoin([ currentWeather, forecast ]);
   }
 
-  apiKey = '6d02aee820fee27c92db6b1ed7070b9d';
-
   setCurrentPlace(place){
     this.currentPlace.next(place)
   }
   private getCurrentWeather(place) {
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${place?.userLatitude}&lon=${place?.userLongitude}&appid=${this.apiKey}&units=metric&lang=en`;
+    const apiUrl = `/api/v1/weather?lat=${place?.userLatitude}&lon=${place?.userLongitude}`;
     return this.http.get<CurrentWeather>(apiUrl)
   }
   getMomentDate(timezone: number| undefined, dt: number| undefined) {

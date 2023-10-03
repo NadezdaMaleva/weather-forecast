@@ -16,11 +16,8 @@ export interface UserLocation {
 export class LocationService {
 
   constructor(private http: HttpClient) {}
-
-  apiKey = 'f0172f259da14fe4b9a3763ce0c57304';
-
   public getUserLocation() {
-    const apiUrl = `https://api.ipgeolocation.io/ipgeo?apiKey=${this.apiKey}&fields=geo`;
+    const apiUrl= '/api/v1/ipgeo';
     return this.http.get<UserLocation>(apiUrl)
   }
 

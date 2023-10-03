@@ -128,9 +128,8 @@ export class ForecastFiveDaysService {
     return {morningStart, morningEnd, afternoonStart, afternoonEnd, eveningStart, eveningEnd, nightStart, nightEnd};
   }
 
-  apiKey = '6d02aee820fee27c92db6b1ed7070b9d';
   getForecastFiveDays (place){
-    const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${place?.userLatitude}&lon=${place?.userLongitude}&appid=${this.apiKey}&units=metric`;
+    const apiUrl = `/api/v1/forecast?lat=${place?.userLatitude}&lon=${place?.userLongitude}`;
     return this.http.get<ForecastFiveDays>(apiUrl)
   }
 }
