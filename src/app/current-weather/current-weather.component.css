@@ -1,0 +1,40 @@
+.place-name{
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+.place-date{
+  font-size: 12px;
+}
+.imgCurrWeather{
+  height: 150px;
+}
+.main-info-current{
+  font-size: 14px;
+}
+
+.bgSnow{
+  height: 150px;
+  background-image: url('~src/assets/snowflakes.svg');
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+.temp-current{
+  font-size: 26px;
+  margin-bottom: 0px;
+}
+
+.descr-current{
+  margin-top: 0px;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 576px){
+  .main-info-current{
+    font-size: 13px;
+  }
+}
+
+
+

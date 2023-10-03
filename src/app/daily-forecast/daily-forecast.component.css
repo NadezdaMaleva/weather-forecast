@@ -1,0 +1,85 @@
+.container{
+  max-width: 768px !important;
+  font-size: 13px;
+}
+
+.imgForecastWeather{
+  max-width: 100px;
+  height: 90px;
+}
+/*.snow {*/
+/*  max-width: 100px;*/
+/*  height: 90px;*/
+/*  background-image: url('~src/assets/snowflakes.svg');*/
+/*  background-repeat: no-repeat;*/
+/*  background-position: bottom;*/
+/*}*/
+.container-inner{
+  margin-right: 6px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  box-shadow: 0 0 8px #889db5;
+}
+.container-inner-afternoon{
+  margin-right: 6px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  box-shadow: 0 0 8px #889db5;
+}
+
+.header-daily-forecast{
+  text-align: center;
+}
+.main-info-daily{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.info-daily p{
+  margin-bottom: 8px;
+}
+
+.wrapper-img-daily{
+  height: 40px;
+}
+
+.imgDailyForecast{
+  max-width: 50px;
+  height: 40px;
+}
+.bgSnowDailyForecast{
+  max-width: 50px;
+  height: 40px;
+  background-image: url('~src/assets/snowflakesPreview.svg');
+  background-repeat: no-repeat;
+  background-position: bottom;
+
+}
+
+.night-temp-prev{
+  font-size: 12px;
+}
+
+.daily-descr{
+  font-size: 12px;
+  padding-bottom: 6px;
+  height: 24px;
+}
+.content-night .container-inner, .content-night .container-inner-afternoon {
+  background: #1f4d8f;
+  box-shadow: 0 0 4px white;
+  border-radius: 6px;
+}
+
+@media only screen and (max-width: 576px){
+  .container-inner-afternoon{
+    margin-right: 0px;
+    margin-bottom: 6px;
+  }
+  .wrapper-img-daily, .imgDailyForecast, .bgSnowDailyForecast{
+    height: 35px;
+  }
+}
+

@@ -1,0 +1,42 @@
+
+<div class="container"
+*ngIf="currentWeather">
+  <div class="row">
+    <div class="col-12 d-flex justify-content-start">
+      <p class="place-name"><i class="bi bi-geo-alt pe-2"></i>{{userPlace.userAddress}}</p>
+    </div>
+    <div class="col-12 d-flex justify-content-start">
+      <p class="place-date">{{currentWeatherService.getMomentDate(currentWeather?.timezone, currentWeather?.dt).format('DD MMMM YYYY H:mm ')}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 d-flex justify-content-center">
+      <img [ngClass]="currentWeatherService.getBgCurrWeather(currentWeather?.weather?.[0]?.icon)"
+           src="{{currentWeatherService.getIconSvg(currentWeather?.weather?.[0]?.icon)}}">
+    </div>
+    <div class="col-12 d-flex justify-content-center">
+      <p class="temp-current">{{currentWeather?.main?.temp | number: '1.0-0'}}<span>&#8451;</span></p>
+    </div>
+    <div class="col-12 d-flex justify-content-center">
+      <p class="descr-current">{{currentWeather?.weather?.[0]?.description}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="d-flex justify-content-around align-items-center my-2">
+      <div class="main-info-current">
+        <p>pressure {{currentWeather?.main?.pressure}} mb</p>
+      </div>
+      <div class="main-info-current">
+        <p><i class="bi bi-moisture pe-2"></i> {{currentWeather?.main?.humidity}} %</p>
+      </div>
+      <div class="main-info-current">
+        <p><i class="bi bi-wind pe-2"></i><span>{{currentWeather?.wind?.speed | number: '1.0-0'}} m/sec</span>
+          <i [ngClass]="currentWeatherService.getWindDirection(currentWeather?.wind?.deg)"></i>
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+

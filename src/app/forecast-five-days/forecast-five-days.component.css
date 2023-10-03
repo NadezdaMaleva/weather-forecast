@@ -1,0 +1,14 @@
+.container_wrapper{
+  display: flex;
+}
+.container_wrapper_content{
+  margin: 10px;
+  padding: 5px 10px;
+  border: 1px solid lightgray;
+  box-shadow: 0 0 8px lightgrey;
+}
+.imgForecastWeather{
+  max-width: 100px;
+  height: 80px;
+}
+

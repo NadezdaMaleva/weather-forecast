@@ -1,0 +1,64 @@
+.container{
+  max-width: 768px !important;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+.date-preview{
+  margin-bottom: 0px;
+  /*man-width: 140px;*/
+}
+.temp-info{
+  min-width: 85px;
+}
+.container-inner{
+  margin: 6px 0px;
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+.main-info-daily{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+.imgPreviewWeather{
+  width: 75px;
+  height: 50px;
+}
+.bgSnowPreview{
+  width: 75px;
+  height: 50px;
+  background-image: url('~src/assets/snowflakesPreview.svg');
+  background-repeat: no-repeat;
+  background-position: bottom;
+
+}
+
+.wrapper-img-preview{
+  height: 50px;
+  width: 85px;
+}
+
+.night-temp-prev{
+  font-size: 11px;
+}
+
+.content-day{
+  box-shadow: 0 0 8px #889db5;
+  border-radius: 6px;
+}
+.content-night{
+  background: #1f4d8f;
+  box-shadow: 0 0 4px white;
+  border-radius: 6px;
+}
+
+@media only screen and (max-width: 576px){
+  .container{
+    font-size: 13px;
+  }
+  .imgPreviewWeather, .bgSnowPreview{
+    width: 60px;
+    height: 40px;
+  }
+}

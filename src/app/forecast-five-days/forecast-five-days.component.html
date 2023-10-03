@@ -1,0 +1,88 @@
+<div>
+  <div>
+    day: {{forecastFiveDays?.dailyForecast[0]?.forecastDay?.main?.temp}}
+    <img class="imgForecastWeather" src="{{getIconSvg(forecastFiveDays?.dailyForecast[0]?.forecastDay?.weather[0]?.icon)}}">
+
+  </div>
+  <div>
+    night: {{forecastFiveDays?.dailyForecast[0].forecastNight?.main?.temp}}
+    <img class="imgForecastWeather" src="{{getIconSvg(forecastFiveDays?.dailyForecast[0]?.forecastNight?.weather[0]?.icon)}}">
+  </div>
+
+
+</div>
+
+<!--<div>-->
+<!--  <li *ngFor="let d of forecastFiveDays?.dailyForecast">-->
+<!--    <p> {{d?.date.format('DD MMMM')}}</p>-->
+<!--    <div class="container_wrapper">-->
+<!--      <div class="container_wrapper_content">-->
+<!--        <p>Morning Weather</p>-->
+<!--        <hr>-->
+<!--        <p> {{d?.forecastMorning?.main?.temp | number : '1.0-0'}}<span>&#8451;</span> </p>-->
+<!--        <p>wind: {{d?.forecastMorning?.wind?.speed }}</p>-->
+<!--        <p>pressure: {{d?.forecastMorning?.main?.pressure }}</p>-->
+<!--        <ul>-->
+<!--          <li *ngFor="let w of d?.forecastMorning?.weather">-->
+<!--            <p> {{w?.description}}</p>-->
+<!--&lt;!&ndash;            <img src="https://openweathermap.org/img/wn/{{w.icon}}@2x.png">&ndash;&gt;-->
+<!--            <img class="imgForecastWeather" src="{{getIconSvg(w?.icon)}}">-->
+
+<!--          </li>-->
+<!--        </ul>-->
+<!--      </div>-->
+<!--      <div class="container_wrapper_content">-->
+<!--        <p>Day Weather</p>-->
+<!--        <hr>-->
+<!--        <p> {{d?.forecastDay?.main?.temp | number : '1.0-0'}}<span>&#8451;</span> </p>-->
+<!--        <p>wind: {{d?.forecastDay?.wind?.speed }}</p>-->
+<!--        <p>pressure: {{d?.forecastDay?.main?.pressure }}</p>-->
+<!--        <ul>-->
+<!--          <li *ngFor="let w of d?.forecastDay?.weather">-->
+<!--            <p> {{w?.description}}</p>-->
+<!--&lt;!&ndash;            <img src="https://openweathermap.org/img/wn/{{w.icon}}@2x.png">&ndash;&gt;-->
+<!--            <img class="imgForecastWeather" src="{{getIconSvg(w?.icon)}}">-->
+<!--          </li>-->
+<!--        </ul>-->
+<!--      </div>-->
+<!--      <div class="container_wrapper_content">-->
+<!--        <p>Evening Weather</p>-->
+<!--        <hr>-->
+<!--        <p> {{d?.forecastEvening?.main?.temp | number : '1.0-0'}}<span>&#8451;</span> </p>-->
+<!--        <p>wind: {{d?.forecastEvening?.wind?.speed }}</p>-->
+<!--        <p>pressure: {{d?.forecastEvening?.main?.pressure }}</p>-->
+<!--        <ul>-->
+<!--          <li *ngFor="let w of d?.forecastEvening?.weather">-->
+<!--            <p> {{w?.description}}</p>-->
+<!--&lt;!&ndash;            <img src="https://openweathermap.org/img/wn/{{w.icon}}@2x.png">&ndash;&gt;-->
+<!--            <img class="imgForecastWeather" src="{{getIconSvg(w?.icon)}}">-->
+<!--          </li>-->
+<!--        </ul>-->
+<!--      </div>-->
+<!--      <div class="container_wrapper_content">-->
+<!--        <p>Night Weather</p>-->
+<!--        <hr>-->
+<!--        <p> {{d?.forecastNight?.main?.temp | number : '1.0-0'}}<span>&#8451;</span> </p>-->
+<!--        <p>wind: {{d?.forecastNight?.wind?.speed }}</p>-->
+<!--        <p>pressure: {{d?.forecastNight?.main?.pressure }}</p>-->
+<!--        <ul>-->
+<!--          <li *ngFor="let w of d?.forecastNight?.weather">-->
+<!--            <p> {{w?.description}}</p>-->
+<!--&lt;!&ndash;            <img src="https://openweathermap.org/img/wn/{{w.icon}}@2x.png">&ndash;&gt;-->
+<!--            <img class="imgForecastWeather" src="{{getIconSvg(w?.icon)}}">-->
+<!--          </li>-->
+<!--        </ul>-->
+<!--      </div>-->
+
+
+<!--    </div>-->
+
+
+
+<!--&lt;!&ndash;    <p>day temperature: {{d.tempDay | number : '1.0-0'}}</p>&ndash;&gt;-->
+<!--&lt;!&ndash;    <p>evening temperature: {{d.tempEvening | number : '1.0-0'}}</p>&ndash;&gt;-->
+<!--&lt;!&ndash;    <p>night temperature: {{d.tempNight | number: '1.0-0'}}</p>&ndash;&gt;-->
+<!--    <hr>-->
+<!--  </li>-->
+
+<!--</div>-->

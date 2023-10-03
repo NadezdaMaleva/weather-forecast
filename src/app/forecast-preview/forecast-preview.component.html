@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row" >
+    <div class="px-0" *ngFor="let day of forecastPreview?.dailyForecast; let i = index">
+      <div [ngClass]="currentWeatherService.getBgColor(currentWeather?.timezone, currentWeather?.dt, forecastPreview?.city?.sunset, forecastPreview?.city?.sunrise)">
+        <div class="container-inner"
+             (click)="extended(day)">
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="date-preview col-3">
+                <p class="mb-0">{{formatDate(day.date, i)}}</p>
+              </div>
+              <div class="col-6 wrapper-img-preview d-flex justify-content-center align-items-center">
+                <div>
+                  <img [ngClass]="getArrBgIcon(day, i)" src="{{getArrIcon(day, i)}}">
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="temp-info d-flex justify-content-around align-items-center">
+                  <p class="pe-2 mb-0 ms-3 "> {{day?.forecastDay?.main?.temp | number : '1.0-0' | filler}}<span>&#8451;</span> </p>
+                  <p class="night-temp-prev mb-0"> {{day?.forecastNight?.main?.temp | number : '1.0-0' | filler}}<span>&#8451;</span> </p>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+
+      <app-daily-forecast *ngIf="day.condition"
+      [dailyForecast]="day"
+      [bgColorClass]="bgColorClass"></app-daily-forecast>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+

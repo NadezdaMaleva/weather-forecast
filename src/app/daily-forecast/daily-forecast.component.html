@@ -1,0 +1,185 @@
+<div class="container" [ngClass]="currentWeather.getBgColor(weather?.timezone, weather?.dt, forecastPreview?.city?.sunset, forecastPreview?.city?.sunrise)">
+  <div class="row">
+    <div class="col-6 col-sm-3 px-0">
+      <div class="container-inner">
+        <div class="header-daily-forecast">
+          Morning
+        </div>
+        <div class="main-info-daily">
+          <div class="ps-1">
+            {{dailyForecast?.forecastMorning?.main?.temp | number: '1.0-0' | filler }}<span>&#8451;</span>
+          </div>
+          <div class="wrapper-img-daily">
+            <img [ngClass]="currentWeather.getBgDailyForecast(dailyForecast?.forecastMorning?.weather?.[0]?.icon)"
+                 src="{{currentWeather.getIconSvg(dailyForecast?.forecastMorning?.weather?.[0]?.icon)}}">
+          </div>
+        </div>
+        <div class="d-flex justify-content-end">
+          <div class="daily-descr">{{dailyForecast?.forecastMorning?.weather?.[0]?.description}}</div>
+        </div>
+        <div class="main-info-daily">
+          <div class="info-daily">
+            <p><i class="bi bi-wind ps-1"></i></p>
+          </div>
+          <div class="info-daily">
+            <p><span>{{dailyForecast?.forecastMorning?.wind?.speed | number: '1.0-0' | filler}} m/sec</span>
+              <i [ngClass]="currentWeather.getWindDirection(dailyForecast?.forecastMorning?.wind?.deg)"></i>
+            </p>
+          </div>
+        </div>
+        <div class="main-info-daily">
+          <div class="info-daily">
+            <p><i class="bi bi-moisture ps-1"></i></p>
+          </div>
+          <div class="info-daily">
+            <p>{{dailyForecast?.forecastMorning?.main?.humidity | filler}} %</p>
+          </div>
+        </div>
+        <div class="main-info-daily" >
+          <div class="info-daily">
+            <p>pressure</p>
+          </div>
+          <div class="info-daily">
+            <p>{{dailyForecast?.forecastMorning?.main?.pressure | filler}} mb</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-sm-3 px-0">
+      <div class="container-inner-afternoon">
+        <div class="header-daily-forecast">
+          Afternoon
+        </div>
+        <div class="main-info-daily">
+          <div class="ps-1">
+            {{dailyForecast?.forecastDay?.main?.temp | number: '1.0-0' | filler}}<span>&#8451;</span>
+          </div>
+          <div class="wrapper-img-daily">
+              <img [ngClass]="currentWeather.getBgDailyForecast(dailyForecast?.forecastDay?.weather?.[0]?.icon)"
+                   src="{{currentWeather.getIconSvg(dailyForecast?.forecastDay?.weather?.[0]?.icon)}}">
+          </div>
+        </div>
+        <div class="d-flex justify-content-end">
+          <div class="daily-descr">{{dailyForecast?.forecastDay?.weather?.[0]?.description}}</div>
+        </div>
+        <div class="main-info-daily">
+          <div class="info-daily">
+            <p><i class="bi bi-wind ps-1"></i></p>
+          </div>
+          <div class="info-daily">
+            <p><span>{{dailyForecast?.forecastDay?.wind?.speed | number: '1.0-0' | filler}} m/sec</span>
+              <i [ngClass]="currentWeather.getWindDirection(dailyForecast?.forecastDay?.wind?.deg)"></i>
+            </p>
+          </div>
+        </div>
+        <div class="main-info-daily">
+          <div class="info-daily">
+            <p><i class="bi bi-moisture ps-1"></i></p>
+          </div>
+          <div class="info-daily" >
+            <p>{{dailyForecast?.forecastDay?.main?.humidity | filler}} %</p>
+          </div>
+        </div>
+        <div class="main-info-daily" >
+          <div class="info-daily">
+            <p>pressure</p>
+          </div>
+          <div class="info-daily">
+            <p>{{dailyForecast?.forecastDay?.main?.pressure | filler}} mb</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-sm-3 px-0">
+      <div class="container-inner">
+        <div class="header-daily-forecast">
+          Evening
+        </div>
+        <div class="main-info-daily">
+          <div class="ps-1">
+            {{dailyForecast?.forecastEvening?.main?.temp | number: '1.0-0' | filler}}<span>&#8451;</span>
+          </div>
+          <div class="wrapper-img-daily">
+            <img [ngClass]="currentWeather.getBgDailyForecast(dailyForecast?.forecastEvening?.weather?.[0]?.icon)"
+                 src="{{currentWeather.getIconSvg(dailyForecast?.forecastEvening?.weather?.[0]?.icon)}}">
+          </div>
+        </div>
+        <div class="d-flex justify-content-end">
+          <div class="daily-descr">{{dailyForecast?.forecastEvening?.weather?.[0]?.description}}</div>
+        </div>
+        <div class="main-info-daily">
+          <div class="info-daily">
+            <p><i class="bi bi-wind ps-1"></i></p>
+          </div>
+          <div class="info-daily">
+            <p><span>{{dailyForecast?.forecastEvening?.wind?.speed | number: '1.0-0' | filler}} m/sec</span>
+              <i [ngClass]="currentWeather.getWindDirection(dailyForecast?.forecastEvening?.wind?.deg)"></i>
+            </p>
+          </div>
+        </div>
+        <div class="main-info-daily">
+          <div class="info-daily">
+            <p><i class="bi bi-moisture ps-1"></i></p>
+          </div>
+          <div class="info-daily">
+            <p>{{dailyForecast?.forecastEvening?.main?.humidity | filler}} %</p>
+          </div>
+        </div>
+        <div class="main-info-daily" >
+          <div class="info-daily">
+            <p>pressure</p>
+          </div>
+          <div class="info-daily">
+            <p>{{dailyForecast?.forecastEvening?.main?.pressure | filler}} mb</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-sm-3 px-0">
+      <div class="container-inner me-0">
+        <div class="header-daily-forecast">
+          Night
+        </div>
+        <div class="main-info-daily">
+          <div class="ps-1">
+            {{dailyForecast?.forecastNight?.main?.temp | number: '1.0-0' | filler}}<span>&#8451;</span>
+          </div>
+          <div class="wrapper-img-daily">
+            <img [ngClass]="currentWeather.getBgDailyForecast(dailyForecast?.forecastNight?.weather?.[0]?.icon)"
+                 src="{{currentWeather.getIconSvg(dailyForecast?.forecastNight?.weather?.[0]?.icon)}}">
+          </div>
+        </div>
+        <div class="d-flex justify-content-end">
+          <div class="daily-descr">{{dailyForecast?.forecastNight?.weather?.[0]?.description}}</div>
+        </div>
+        <div class="main-info-daily">
+          <div class="info-daily">
+            <p><i class="bi bi-wind ps-1"></i></p>
+          </div>
+          <div class="info-daily">
+            <p><span>{{dailyForecast?.forecastNight?.wind?.speed | number: '1.0-0' | filler}} m/sec</span>
+              <i [ngClass]="currentWeather.getWindDirection(dailyForecast?.forecastNight?.wind?.deg)"></i>
+            </p>
+          </div>
+        </div>
+        <div class="main-info-daily">
+          <div class="info-daily">
+            <p><i class="bi bi-moisture ps-1"></i></p>
+          </div>
+          <div class="info-daily">
+            <p>{{dailyForecast?.forecastNight?.main?.humidity | filler}} %</p>
+          </div>
+        </div>
+        <div class="main-info-daily" >
+          <div class="info-daily">
+            <p>pressure</p>
+          </div>
+          <div class="info-daily">
+            <p>{{dailyForecast?.forecastNight?.main?.pressure | filler}} mb</p>
+          </div>
+        </div>
+      </div>
+      </div>
+  </div>
+
+</div>
