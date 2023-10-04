@@ -8,7 +8,7 @@ export class FillerPipe implements PipeTransform {
   transform(value: any): string {
     if(value) {
       return value
-    } return '-/- ';
+    } return '-/-';
   }
 
 }
